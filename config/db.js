@@ -11,14 +11,10 @@ async function connectDB() {
     return cached.conn
   }
   if (!cached.promise) {
-    const opts = {
-      bufferCommands: false,
-      //   useNewUrlParser: true,
-      //   useUnifiedTopology: true,
-    }
+    const opts = { bufferCommands: false }
 
     cached.promise = mongoose
-      .connect(`${process.env.MONGODB_URI}/quickcart`, opts)
+      .connect(`${process.env.MONGODB_URI}/epart`, opts)
       .then((mongoose) => {
         return mongoose
       })
